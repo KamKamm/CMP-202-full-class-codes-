@@ -33,9 +33,19 @@ public class GeometryUI{
         panel2.add(areaOFTrangle);
 
 
-        JPanel Panel3 = new JPanel();
-        Panel3.setLayout(new FlowLayout());
-        Panel3.add(areaOFRectangle);
+        JPanel panel3 = new JPanel();
+        panel3.setLayout(new FlowLayout());
+        panel3.add(areaOFRectangle);
+
+        frame.setLayout(new GridLayout(3,1));
+        frame.add(panel1);
+        frame.add(panel2);
+        frame.add(panel3);
+        frame.setSize(300,150);
+        frame.setVisible(true);
+
+
+
 
 
 
