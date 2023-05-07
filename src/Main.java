@@ -1,8 +1,7 @@
 import UI.GeometryUI;
 
-class Main {
+public class Main {
     public static void main(String[] args) {
-        GeometryUI myobj = new GeometryUI();
-        myobj.mainUI();
+        GeometryUI gui = new GeometryUI();
     }
 }
