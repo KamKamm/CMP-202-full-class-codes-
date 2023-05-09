@@ -1,14 +1,10 @@
 package UI;
 
 import javax.swing.*;
-import javax.swing.event.AncestorEvent;
-import javax.swing.event.AncestorListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import static java.awt.Color.*;
-
+import java.awt.Color;
 public class GeometryUI{
     JFrame frame;
     JButton areaOFSquare;
@@ -20,8 +16,11 @@ public class GeometryUI{
 
     public GeometryUI(){
         frame = new JFrame("Geomtry");
-        frame.getContentPane().setBackground(darkGray);
+        frame.getContentPane().setBackground(Color.darkGray);
+//        frame.setSize(400,400);
+//        frame.setVisible(true);
         areaOFSquare = new JButton("Area of sqaure");
+//        areaOFSquare.setForeground(Color.white);
         areaOFTrangle = new JButton("Area of triangle");
         areaOFRectangle = new JButton("Area of rectangle");
         areaOFCircle = new JButton("Area of circle");
@@ -32,29 +31,33 @@ public class GeometryUI{
         JPanel panel1 = new JPanel();
         panel1.setLayout(new FlowLayout());
         panel1.add(areaOFSquare);
+        panel1.setBackground(Color.DARK_GRAY);
       //  panel1.add(enterLengthOFSquare);
       //  panel1.add(calculateAreaOFSquare);
 
         JPanel panel2 = new JPanel();
         panel2.setLayout(new FlowLayout());
         panel2.add(areaOFTrangle);
+        panel2.setBackground(Color.DARK_GRAY);
 
 
         JPanel panel3 = new JPanel();
         panel3.setLayout(new FlowLayout());
         panel3.add(areaOFRectangle);
+        panel3.setBackground(Color.DARK_GRAY);
 
         JPanel panel4 = new JPanel();
         panel4.setLayout(new FlowLayout());
         panel4.add(areaOFCircle);
+        panel4.setBackground(Color.DARK_GRAY);
 
-        frame.setLayout(new GridLayout(3,1));
+        frame.setLayout(new GridLayout(4,1));
         frame.add(panel1);
         frame.add(panel2);
         frame.add(panel3);
         frame.add(panel4);
-        frame.setSize(300,150);
-//        frame.setContentPane(darkGray);
+        frame.setSize(250,200);
+//        frame.setContentPane(Color.darkGray);
         frame.setVisible(true);
 
         areaOFSquare.addActionListener(new ActionListener() {
