@@ -11,33 +11,40 @@ public class GeometryUI{
     JButton areaOFTrangle;
     JButton areaOFRectangle;
     JButton areaOFCircle;
-//    JTextField enterLengthOFSquare;
-//    JButton calculateAreaOFSquare;
+    JTextField sideLength;
+    JTextField height;
+    JTextField base;
+    JTextField width;
+    JTextField radius;
+
+
 
     public GeometryUI(){
         frame = new JFrame("Geomtry");
         frame.getContentPane().setBackground(Color.darkGray);
-//        frame.setSize(400,400);
-//        frame.setVisible(true);
         areaOFSquare = new JButton("Area of sqaure");
-//        areaOFSquare.setForeground(Color.white);
         areaOFTrangle = new JButton("Area of triangle");
         areaOFRectangle = new JButton("Area of rectangle");
         areaOFCircle = new JButton("Area of circle");
-//       enterLengthOFSquare = new JTextField();
-//        calculateAreaOFSquare = new JButton("calculate");
+
+        sideLength = new JTextField();
+        height =new JTextField();
+        base = new JTextField();
+        width = new JTextField();
+        radius = new JTextField();
 
 
         JPanel panel1 = new JPanel();
         panel1.setLayout(new FlowLayout());
         panel1.add(areaOFSquare);
+        panel1.add(sideLength);
         panel1.setBackground(Color.DARK_GRAY);
-      //  panel1.add(enterLengthOFSquare);
-      //  panel1.add(calculateAreaOFSquare);
 
         JPanel panel2 = new JPanel();
         panel2.setLayout(new FlowLayout());
         panel2.add(areaOFTrangle);
+        panel2.add(base);
+        panel2.add(height);
         panel2.setBackground(Color.DARK_GRAY);
 
 
@@ -57,7 +64,7 @@ public class GeometryUI{
         frame.add(panel3);
         frame.add(panel4);
         frame.setSize(250,200);
-//        frame.setContentPane(Color.darkGray);
+
         frame.setVisible(true);
 
         areaOFSquare.addActionListener(new ActionListener() {
@@ -67,12 +74,6 @@ public class GeometryUI{
             }
         });
 
-//        calculateAreaOFSquare.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//
-//            }
-//        });
 
         areaOFRectangle.addActionListener(new ActionListener() {
             @Override
