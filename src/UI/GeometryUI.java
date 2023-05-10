@@ -58,7 +58,7 @@ public class GeometryUI{
         panel4.add(areaOFCircle);
         panel4.setBackground(Color.DARK_GRAY);
 
-        frame.setLayout(new GridLayout(4,1));
+        frame.setLayout(new GridLayout(4,2));
         frame.add(panel1);
         frame.add(panel2);
         frame.add(panel3);
@@ -105,9 +105,6 @@ public class GeometryUI{
 
 
 }
-
-
-
 
 
 
