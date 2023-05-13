@@ -1,110 +1,67 @@
 package UI;
 
+
+import Files.FileWriterMain;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.Color;
+
+
 public class GeometryUI{
-    JFrame frame;
-    JButton areaOFSquare;
-    JButton areaOFTrangle;
-    JButton areaOFRectangle;
-    JButton areaOFCircle;
-    JTextField sideLength;
-    JTextField height;
-    JTextField base;
-    JTextField width;
-    JTextField radius;
+    FileWriterMain fileWriterMain = new FileWriterMain();
+    JFrame frame = new JFrame("UI.Geometry");
+    JFrame areaOfSquareFrame = new JFrame("Area of Square");
+    JButton calculateAreaOfSquare = new JButton("Calculate");
+    JButton areaOfSqrBtn = new JButton("Area of Square");
+    JTextField enterLengthOfSquare = new JTextField("Enter Length");
+    JButton areaOfTriBtn = new JButton("Area of Triangle");
+    JButton areaOfRecBtn = new JButton("Area of Rectangle");
 
-
-
-    public GeometryUI(){
-        frame = new JFrame("Geomtry");
-        frame.getContentPane().setBackground(Color.darkGray);
-        areaOFSquare = new JButton("Area of sqaure");
-        areaOFTrangle = new JButton("Area of triangle");
-        areaOFRectangle = new JButton("Area of rectangle");
-        areaOFCircle = new JButton("Area of circle");
-
-        sideLength = new JTextField();
-        height =new JTextField();
-        base = new JTextField();
-        width = new JTextField();
-        radius = new JTextField();
-
-
-        JPanel panel1 = new JPanel();
-        panel1.setLayout(new FlowLayout());
-        panel1.add(areaOFSquare);
-        panel1.add(sideLength);
-        panel1.setBackground(Color.DARK_GRAY);
-
-        JPanel panel2 = new JPanel();
-        panel2.setLayout(new FlowLayout());
-        panel2.add(areaOFTrangle);
-        panel2.add(base);
-        panel2.add(height);
-        panel2.setBackground(Color.DARK_GRAY);
-
-
-        JPanel panel3 = new JPanel();
-        panel3.setLayout(new FlowLayout());
-        panel3.add(areaOFRectangle);
-        panel3.setBackground(Color.DARK_GRAY);
-
-        JPanel panel4 = new JPanel();
-        panel4.setLayout(new FlowLayout());
-        panel4.add(areaOFCircle);
-        panel4.setBackground(Color.DARK_GRAY);
-
-        frame.setLayout(new GridLayout(4,2));
-        frame.add(panel1);
-        frame.add(panel2);
-        frame.add(panel3);
-        frame.add(panel4);
-        frame.setSize(250,200);
-
+    public void mainUI() {
+        frame.add(areaOfSqrBtn);
+        frame.add(areaOfTriBtn);
+        frame.add(areaOfRecBtn);
+        frame.setSize(150, 200);
+        frame.setLayout(new GridLayout(3, 1));
         frame.setVisible(true);
-
-        areaOFSquare.addActionListener(new ActionListener() {
+    }
+    //Listener allows us to listen to an event
+    public void sqr(){
+        areaOfSqrBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // System.out.println("Calculate Area of Square");
+                drawAreaOfSquareUI();
+                JOptionPane.showMessageDialog(null,"Calculate Area of Square");
 
             }
         });
-
-
-        areaOFRectangle.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
-        areaOFTrangle.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        areaOFCircle.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
-
-
 
     }
+    public void drawAreaOfSquareUI(){
+        areaOfSquareFrame.add(enterLengthOfSquare);
+        areaOfSquareFrame.add(calculateAreaOfSquare);
+        areaOfSquareFrame.setLayout(new GridLayout(2,1));
+        areaOfSquareFrame.setSize(150,200);
+        areaOfSquareFrame.setVisible(true);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        Geometry geo = new Geometry();
+        calculateAreaOfSquare.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                float area = geo.areaOfSquare(Float.parseFloat(enterLengthOfSquare.getText()));
+
+                // JOptionPane.showMessageDialog(null,area);
+                fileWriterMain.writeData("Area of Square");
+                JOptionPane.showMessageDialog(null,area);
 
 
+            }
 
-
+        });
+    }
 
 }
-
-
-
