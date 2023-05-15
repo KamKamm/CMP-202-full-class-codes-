@@ -25,5 +25,3 @@ public class Geometry extends Maths {
     }
 }
 
-// static polymorphism imethod overload
-// dynamic polymorphismmethod overriding
